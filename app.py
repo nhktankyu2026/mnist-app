@@ -239,4 +239,4 @@ with tab2:
             st.write("**モデルの裏側での処理:**")
             st.write(f"1. 指定されたラベル `y = {target_num}` を入力")
             st.write(f"2. {cfg.latent_dim}次元のランダムなノイズ `z` をブレンド")
-            st.write("3. `gan_g_ema_best.pth` が32x32の擬似画像を演算出力")
+            st.write("3. `gan_g_ema_final.pth` が32x32の擬似画像を演算出力")
