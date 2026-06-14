@@ -8,6 +8,7 @@ from torch.optim.swa_utils import AveragedModel
 import streamlit as st
 from streamlit_drawable_canvas import st_canvas
 from PIL import Image
+from PIL import ImageEnhance
 import numpy as np
 
 
@@ -228,6 +229,12 @@ with tab2:
             img_np = generated_tensor.squeeze(0).cpu().permute(1, 2, 0).numpy()
             img_np = (img_np * 255).astype(np.uint8)
             gen_img = Image.fromarray(img_np)
+
+            enhancer = ImageEnhance.Contrast(gen_img)
+            gen_img = enhancer.enhance(1.5)
+
+            enhancer = ImageEnhance.Brightness(gen_img)
+            gen_img = enhancer.enhance(1.2)
 
         # 画面に引き伸ばして表示 (32x32だと小さすぎるので256ピクセルに拡大表示)
         st.success(f"数字『 {target_num} 』の画像を生成しました！")
