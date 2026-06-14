@@ -15,7 +15,7 @@ import numpy as np
 class Config:
     n_classes = 10
     img_size = 32
-    latent_dim = 100  # もしノートブックの設定と違っていれば合わせてください
+    latent_dim = 64
     simclr_feat = 512
     simclr_proj = 128
     simclr_comp = 128
