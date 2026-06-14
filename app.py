@@ -127,7 +127,7 @@ def load_all_models():
     # --- Generator (EMA) のロード ---
     # ※もしエラーが出る場合は、ノートブックの引数（例: Generator(cfg) など）に合わせてください
     g_model = Generator()
-    g_model.load_state_dict(torch.load("gan_g_ema_best.pth", map_location=DEVICE))
+    g_model.load_state_dict(torch.load("gan_g_ema_final.pth", map_location=DEVICE))
     g_model.eval()
 
     return d_model, g_model
@@ -158,7 +158,7 @@ with tab1:
     with col1:
         canvas_result = st_canvas(
             fill_color="rgba(255, 255, 255, 0)",
-            stroke_width=16,
+            stroke_width=35,
             stroke_color="#FFFFFF",
             background_color="#000000",
             width=280,
